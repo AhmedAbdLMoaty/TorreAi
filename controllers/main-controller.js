@@ -17,8 +17,7 @@ pageTitle: 'hello there'
 };
 
 exports.getSearchHistory = (req, res) => {
-    const filePath = path.join('/tmp', 'searchHistory.json'); // Use /tmp directory
-
+    const filePath = path.join(__dirname ,'/tmp', 'searchHistory.json'); // Use /tmp directory
     if (fs.existsSync(filePath)) {
         fs.readFile(filePath, 'utf8', (err, data) => {
             if (err) {

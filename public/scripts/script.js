@@ -47,48 +47,61 @@ document.addEventListener('DOMContentLoaded', () => {
 
                                 
                                 Object.values(data).forEach((item) => {
-                                const resultElement = document.createElement('div');
-                                resultElement.classList.add('result'); 
-
+                                    const resultCard = document.createElement('div');
+                                    resultCard.classList.add('result-card');
                                 
-                                const nameElement = document.createElement('h2');
-                                nameElement.textContent = `Name: ${item.name}`;
-                                resultElement.appendChild(nameElement);
-
-                                const headlineElement = document.createElement('p');
-                                headlineElement.textContent = `Professional Headline: ${item.professionalHeadline}`;
-                                resultElement.appendChild(headlineElement);
-
+                                    // Create an image element
+                                    const imageUrlElement = document.createElement('img');
+                                    imageUrlElement.src = item.imageUrl; // Assuming the image URL is in the 'imageUrl' property
+                                    imageUrlElement.alt = `Image for ${item.name}`;
+                                    imageUrlElement.classList.add('card-image');
                                 
-                                const profileLink = document.createElement('a');
-                                profileLink.textContent = 'View Profile';
-                                profileLink.href = `https://torre.ai/${item.username}`;
-                                profileLink.target = '_blank'; 
-                                resultElement.appendChild(profileLink);
-
-                                resultsDiv.appendChild(resultElement);
+                                    // Create a container for text content
+                                    const textContent = document.createElement('div');
+                                    textContent.classList.add('card-text-content');
                                 
-                                const addToFavoritesButton = document.createElement('button');
-                                addToFavoritesButton.textContent = 'Add to Favorites';
-                                addToFavoritesButton.addEventListener('click', () => {
-
-                                    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-                            
-                                    if (!favorites.some((fav) => fav.ggId === item.ggId)) {
-
-                                        favorites.push(item);
-                            
-
-                                        localStorage.setItem('favorites', JSON.stringify(favorites));
-                                        alert('Added to Favorites!');
-                                    } else {
-                                        alert('This item is already in your Favorites.');
-                                    }
+                                    // Add name
+                                    const nameElement = document.createElement('h2');
+                                    nameElement.textContent = `Name: ${item.name}`;
+                                    textContent.appendChild(nameElement);
+                                
+                                    // Add professional headline
+                                    const headlineElement = document.createElement('p');
+                                    headlineElement.textContent = `Professional Headline: ${item.professionalHeadline}`;
+                                    textContent.appendChild(headlineElement);
+                                
+                                    // Add a "View Profile" link
+                                    const profileLink = document.createElement('a');
+                                    profileLink.textContent = 'View Profile';
+                                    profileLink.href = `https://torre.ai/${item.username}`;
+                                    profileLink.target = '_blank';
+                                    textContent.appendChild(profileLink);
+                                
+                                    // Append the image and text content to the result card
+                                    resultCard.appendChild(imageUrlElement);
+                                    resultCard.appendChild(textContent);
+                                
+                                    // Create an "Add to Favorites" button
+                                    const addToFavoritesButton = document.createElement('button');
+                                    addToFavoritesButton.textContent = 'Add to Favorites';
+                                    addToFavoritesButton.addEventListener('click', () => {
+                                        const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+                                
+                                        if (!favorites.some((fav) => fav.ggId === item.ggId)) {
+                                            favorites.push(item);
+                                            localStorage.setItem('favorites', JSON.stringify(favorites));
+                                            alert('Added to Favorites!');
+                                        } else {
+                                            alert('This item is already in your Favorites.');
+                                        }
+                                    });
+                                
+                                    // Append the result card and button to the result container
+                                    resultCard.appendChild(addToFavoritesButton);
+                                    document.getElementById('results').appendChild(resultCard);
                                 });
-                            
-                                resultElement.appendChild(addToFavoritesButton);
-                                resultsDiv.appendChild(resultElement);
-                            });
+                                
+                                
                             
                             
 
