@@ -67,15 +67,18 @@ document.addEventListener('DOMContentLoaded', () => {
                                 
                                     // Add professional headline
                                     const headlineElement = document.createElement('p');
-                                    headlineElement.textContent = `Professional Headline: ${item.professionalHeadline}`;
+                                    headlineElement.textContent = ` ${item.professionalHeadline}`;
                                     textContent.appendChild(headlineElement);
                                 
                                     // Add a "View Profile" link
-                                    const profileLink = document.createElement('a');
-                                    profileLink.textContent = 'View Profile';
-                                    profileLink.href = `https://torre.ai/${item.username}`;
-                                    profileLink.target = '_blank';
-                                    textContent.appendChild(profileLink);
+                                    const viewProfileButton = document.createElement('a');
+                                    viewProfileButton.textContent = 'View Profile';
+                                    viewProfileButton.href = `https://torre.ai/${item.username}`;
+                                    viewProfileButton.target = '_blank';
+                                    viewProfileButton.classList.add('view-profile-button'); 
+                                    textContent.appendChild(viewProfileButton);
+
+                                    
                                 
                                     // Append the image and text content to the result card
                                     resultCard.appendChild(imageUrlElement);
@@ -84,9 +87,12 @@ document.addEventListener('DOMContentLoaded', () => {
                                     // Create an "Add to Favorites" button
                                     const addToFavoritesButton = document.createElement('button');
                                     addToFavoritesButton.textContent = 'Add to Favorites';
+                                    addToFavoritesButton.classList.add('add-to-favorites-button'); // Add the class for styling
+                                    
+                                    // Add click event listener for "Add to Favorites" button
                                     addToFavoritesButton.addEventListener('click', () => {
                                         const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-                                
+                                    
                                         if (!favorites.some((fav) => fav.ggId === item.ggId)) {
                                             favorites.push(item);
                                             localStorage.setItem('favorites', JSON.stringify(favorites));

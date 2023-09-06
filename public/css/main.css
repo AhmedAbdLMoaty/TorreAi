@@ -1,6 +1,6 @@
 body {
     background-color: black;
-    color: #cddc39;
+    color: #12f50e7f;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -14,7 +14,7 @@ body {
 }
 
 header {
-    background-color: #cddc39;
+    background-color: #12f50e7f;
     padding: 10px 0; 
     text-align: center;
     position: fixed;
@@ -27,20 +27,24 @@ header {
 }
 
 
+/* Style for the navbar */
 .nav-bar {
     list-style-type: none;
+    margin: 0;
     padding: 0;
-    display: flex; 
-    justify-content: center; 
+    display: flex;
+    justify-content: center;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #cddc39; /* Change this to your desired background color */
-    z-index: 9999; /* Ensure a higher z-index value */
-    padding: 10px 0; /* Adjust padding as needed */
+    background-color: #12f50eff; 
+    z-index: 9999;
+    padding: 10px 0;
     text-align: center;
 }
+
+
 /* Card container */
 .result-container {
     display: flex;
@@ -48,16 +52,54 @@ header {
     justify-content: space-between; /* Distribute cards evenly across the container */
     color: #0c0d0d;
 }
+.view-profile-button {
+    display: inline-block;
+    display: block; /* Change from inline-block to block */
+    margin: auto;
+    align-items: center;
+    max-width: fit-content;
+    padding: 10px 20px;
+    background-color: #12f50e7f;
+    color: black;
+    border: 1px solid black;
+    border-radius: 7px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.35s ease;
+    margin: 15px;
+}
+/* Style for the "Add to Favorites" button */
+.add-to-favorites-button {
+    display: block; /* Change from inline-block to block */
+    margin: auto;    padding: 10px 20px;
+    background-color: #12f50e7f;
+    color: black;
+    border: 1px solid black;
+    border-radius: 7px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.35s ease;
+    
+}
 
+.add-to-favorites-button:hover {
+    background-color: black;
+    color: #12f50e7f;
+}
+
+.view-profile-button:hover {
+    background-color: black;
+    color: #12f50e7f;
+}
 /* Card-like structure */
 .result-card {
-    border: 1px solid #cddc39;
-    border-radius: 10px;
+    border: 1px solid #12f50e7f;
+    border-radius: 25px;
     padding: 20px;
     margin: 20px;
     width: 300px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: #cddc39;
+    background-color: #12f50e7f;
     display: flex;
     flex-direction: column; /* Stack image and content vertically */
 }
@@ -82,6 +124,9 @@ header {
 /* Styling for the text content */
 .card-text-content {
     margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .nav-bar li {
@@ -93,8 +138,8 @@ header {
     background-color: white;
     padding: 20px 25px;
     margin: 8px 0;
-    margin-right: 10px;
-    border: 1px solid #cddc39;
+    margin-left: 27px;      
+    border: 1px solid black; 
     border-radius: 10px;
     box-sizing: border-box;
     font-size: 16px;
@@ -102,10 +147,10 @@ header {
 .nav-bar a {
     text-decoration: none;
     color: black;
-    background-color: #cddc39;
-    padding: 10px 20px;
+    background-color: #12f50e7f;
+    padding: 20px 30px;
     margin: 35px;
-    border-radius: 7px;
+    border-radius: 10px;
     border: 1px solid black; 
     transition: background-color 0.35s ease; 
     align-items: center;
@@ -146,7 +191,7 @@ header {
 
 .nav-bar a:hover {
     background-color: black;
-    color: #cddc39;
+    color: #12f50e7f;
 }
 
 main {
@@ -157,11 +202,22 @@ main {
     font-size: 2.5rem;
     margin-top: 88px !important;
 }
+.input-search{
+    background-color: white;
+    padding: 19px 25px;
+    border: 1px solid #12f50e7f;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-left: 29px;
+    margin-bottom: 25px;
+    font-size: 16px;
+
+}
 h1 {
     display: block;
     font-size: 2.5rem;
     margin-top: 45px !important;
-
+    margin-left: 27px;
   position: relative;
   left: 100%; /* Initially position it outside the viewport on the right */
   animation: moveFromRight 0.7s forwards; /* Apply a transition effect to the left property */
@@ -193,11 +249,9 @@ h1 {
 
 .button-78 {
   align-items: center;
-  appearance: none;
-  background-clip: padding-box;
   background-color: initial;
-  background-image: none;
   border-style: none;
+  margin-left: 8px;
   box-sizing: border-box;
   color: #070101;
   cursor: pointer;
@@ -209,23 +263,20 @@ h1 {
   font-weight: 800;
   justify-content: center;
   line-height: 24px;
-  margin: 0;
   min-height: 64px;
   outline: none;
   overflow: visible;
-  padding: 19px 26px;
+  padding: 15px 20px;
   pointer-events: auto;
   position: relative;
   text-align: center;
-  text-decoration: none;
-  text-transform: none;
+
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
   vertical-align: middle;
   width: auto;
   word-break: keep-all;
-  z-index: 0;
   transition: background-color 0.35s ease; 
 }
 .button-78 a:hover{
@@ -243,7 +294,7 @@ h1 {
 }
 
 .button-78:before {
-  background-image: linear-gradient(92.83deg, #CDDC39 0, #ccdc39c6 100%);
+  background-image: linear-gradient(92.83deg, #12f50e7f 0, #ccdc39c6 100%);
   content: "";
   display: block;
   height: 100%;
@@ -257,7 +308,7 @@ h1 {
 
 .button-78:after {
   background-color: initial;
-  background-image: linear-gradient(#CDDC39 0, #ccdc39c6 100%);
+  background-image: linear-gradient(#12f50e7f 0, #ccdc39c6 100%);
   bottom: 4px;
   content: "";
   display: block;
