@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 
                                     // Add name
                                     const nameElement = document.createElement('h2');
-                                    nameElement.textContent = `Name: ${item.name}`;
+                                    nameElement.textContent = `${item.name}`;
                                     textContent.appendChild(nameElement);
                                 
                                     // Add professional headline

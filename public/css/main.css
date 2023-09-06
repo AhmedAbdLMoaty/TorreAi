@@ -1,11 +1,21 @@
 body {
     background-color: black;
-    color: #12f50e7f;
+    color: #ffffffcc;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-}
 
+        background-image: url('./back.jpeg'); /* Replace 'background-image.jpg' with your image file */
+        background-size: cover; /* Ensures the image covers the entire background */
+        background-repeat: no-repeat; /* Prevents the image from repeating */
+        background-attachment: fixed; /* Keeps the background fixed while scrolling */
+    
+}
+li {
+    font-size: larger;
+    font-weight: bolder;
+}
+ 
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -14,7 +24,7 @@ body {
 }
 
 header {
-    background-color: #12f50e7f;
+    background-color: #12f50ed0;
     padding: 10px 0; 
     text-align: center;
     position: fixed;
@@ -59,7 +69,7 @@ header {
     align-items: center;
     max-width: fit-content;
     padding: 10px 20px;
-    background-color: #12f50e7f;
+    background-color: #12f50eff;
     color: black;
     border: 1px solid black;
     border-radius: 7px;
@@ -72,7 +82,7 @@ header {
 .add-to-favorites-button {
     display: block; /* Change from inline-block to block */
     margin: auto;    padding: 10px 20px;
-    background-color: #12f50e7f;
+    background-color: #12f50eff;
     color: black;
     border: 1px solid black;
     border-radius: 7px;
@@ -84,22 +94,22 @@ header {
 
 .add-to-favorites-button:hover {
     background-color: black;
-    color: #12f50e7f;
+    color: #12f50eff;
 }
 
 .view-profile-button:hover {
     background-color: black;
-    color: #12f50e7f;
+    color: #12f50eff;
 }
 /* Card-like structure */
 .result-card {
-    border: 1px solid #12f50e7f;
+    border: 1px solid #12f50eff;
     border-radius: 25px;
     padding: 20px;
     margin: 20px;
     width: 300px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: #12f50e7f;
+    background-color: #12f50eff;
     display: flex;
     flex-direction: column; /* Stack image and content vertically */
 }
@@ -147,7 +157,7 @@ header {
 .nav-bar a {
     text-decoration: none;
     color: black;
-    background-color: #12f50e7f;
+    background-color: #12f50eff;
     padding: 20px 30px;
     margin: 35px;
     border-radius: 10px;
@@ -191,7 +201,7 @@ header {
 
 .nav-bar a:hover {
     background-color: black;
-    color: #12f50e7f;
+    color: #12f50eff;
 }
 
 main {
@@ -205,7 +215,7 @@ main {
 .input-search{
     background-color: white;
     padding: 19px 25px;
-    border: 1px solid #12f50e7f;
+    border: 1px solid #12f50eff;
     border-radius: 10px;
     box-sizing: border-box;
     margin-left: 29px;
@@ -294,7 +304,7 @@ h1 {
 }
 
 .button-78:before {
-  background-image: linear-gradient(92.83deg, #12f50e7f 0, #ccdc39c6 100%);
+  background-image: linear-gradient(92.83deg, #12f50eff 0, #ccdc39c6 100%);
   content: "";
   display: block;
   height: 100%;
@@ -308,7 +318,7 @@ h1 {
 
 .button-78:after {
   background-color: initial;
-  background-image: linear-gradient(#12f50e7f 0, #ccdc39c6 100%);
+  background-image: linear-gradient(#12f50eff 0, #ccdc39c6 100%);
   bottom: 4px;
   content: "";
   display: block;
