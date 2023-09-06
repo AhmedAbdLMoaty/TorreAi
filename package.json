@@ -1,0 +1,19 @@
+{
+  "name": "torre",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AhmedAbdLMoaty/TorreAi.git"
+  },
+  "author": "Ahmed Mohamed Abd El Moaty",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AhmedAbdLMoaty/TorreAi/issues"
+  },
+  "homepage": "https://github.com/AhmedAbdLMoaty/TorreAi#readme"
+}
