@@ -1,0 +1,31 @@
+<%- include('includes/head.ejs') %>
+<body>
+    <%- include('includes/nav.ejs') %>
+    <h1>My Favorites</h1>
+    <ul id="favoritesList">
+        <!-- Saved favorites will be displayed here -->
+    </ul>
+    
+    <script>
+// Get the favorites from localStorage
+const favorites = JSON.parse(localStorage.getItem("favorites"));
+
+// Check if favorites exist and are not empty
+if (favorites && favorites.length > 0) {
+    const favoritesList = document.getElementById('favoritesList');
+
+    // Clear any existing items in the list
+    favoritesList.innerHTML = '';
+
+    // Add each favorite to the list
+    favorites.forEach((favorite) => {
+        const listItem = document.createElement('li');
+        listItem.textContent = favorite.name; // Adjust this based on your data structure
+        favoritesList.appendChild(listItem);
+    });
+}
+
+    </script>
+
+    <%- include('includes/end.ejs') %>
+</body>

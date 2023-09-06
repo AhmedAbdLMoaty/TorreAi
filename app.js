@@ -8,6 +8,10 @@ const landingRoutes = require('./routes/landing');
 
 const searchRoutes = require('./routes/search');
 
+const searchHistoryRoutes = require('./routes/search-history');
+
+const favRoutes = require('./routes/fav')
+
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -21,6 +25,10 @@ app.set('views', 'views');
 app.get('/search-page', searchRoutes);
 
 app.post('/search-page', searchRoutes);
+
+app.get('/fav', favRoutes);
+
+app.get('/history', searchHistoryRoutes );
 
 app.use('/' , landingRoutes );
 

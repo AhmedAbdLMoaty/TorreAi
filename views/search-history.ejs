@@ -1,0 +1,33 @@
+<%- include('includes/head.ejs') %>
+<body>
+    <%- include('includes/nav.ejs') %>
+
+    <h1>Search History</h1>
+    <ul id="searchHistoryList">
+        <% searchHistory.forEach((term) => { %>
+            <li><%= term %></li>
+        <% }); %>
+    </ul>
+
+    <script>
+        // Get the search history from localStorage
+        const searchHistory = JSON.parse(localStorage.getItem("searchHistory"));
+
+        // Check if search history exists and is not empty
+        if (searchHistory && searchHistory.data.length > 0) {
+            const historyList = document.getElementById('searchHistoryList');
+
+            // Clear any existing items in the list
+            historyList.innerHTML = '';
+
+            // Add each search query to the list
+            searchHistory.data.forEach((query) => {
+                const listItem = document.createElement('li');
+                listItem.textContent = query;
+                historyList.appendChild(listItem);
+            });
+        }
+    </script>
+
+    <%- include('includes/end.ejs') %>
+</body>
