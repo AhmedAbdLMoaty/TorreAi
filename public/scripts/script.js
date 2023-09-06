@@ -1,4 +1,5 @@
- document.addEventListener('DOMContentLoaded', () => {
+
+document.addEventListener('DOMContentLoaded', () => {
         const searchForm = document.getElementById('searchForm');
         const searchInput = document.getElementById('searchInput');
         const resultsDiv = document.getElementById('results');
@@ -42,12 +43,12 @@
                         const itemData = JSON.parse(itemToParse)
                         data[itemData.ggId] = itemData
                         const resultsDiv = document.getElementById('results');
-                                resultsDiv.innerHTML = ''; // Clear previous results
+                                resultsDiv.innerHTML = ''; 
 
                                 
                                 Object.values(data).forEach((item) => {
                                 const resultElement = document.createElement('div');
-                                resultElement.classList.add('result'); // Add a CSS class for styling
+                                resultElement.classList.add('result'); 
 
                                 
                                 const nameElement = document.createElement('h2');
@@ -70,15 +71,14 @@
                                 const addToFavoritesButton = document.createElement('button');
                                 addToFavoritesButton.textContent = 'Add to Favorites';
                                 addToFavoritesButton.addEventListener('click', () => {
-                                    // Retrieve the user's favorites from localStorage or initialize an empty array
+
                                     const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
                             
-                                    // Check if the item is not already in the favorites
                                     if (!favorites.some((fav) => fav.ggId === item.ggId)) {
-                                        // Add the current item to the favorites array
+
                                         favorites.push(item);
                             
-                                        // Update localStorage with the updated favorites
+
                                         localStorage.setItem('favorites', JSON.stringify(favorites));
                                         alert('Added to Favorites!');
                                     } else {
