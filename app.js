@@ -18,11 +18,9 @@ app.set('views', 'views');
 
 // Paths
 
+app.get('/search-page', searchRoutes);
 
-
-app.use('/search-page', searchRoutes);
-
-app.use('/search-results', searchRoutes);
+app.post('/search-page', searchRoutes);
 
 app.use('/' , landingRoutes );
 
