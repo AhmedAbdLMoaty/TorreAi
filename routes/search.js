@@ -13,7 +13,8 @@ const port = 3000;
 const router = express.Router();
 
 
-router.get('/', controllers.getLanding );
+router.get('/search-page' , controllers.getSearch );
 
+router.post('/search-results' , controllers.postReq );
 
 module.exports = router;
