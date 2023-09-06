@@ -17,8 +17,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // view engine
-app.set('view engine', 'ejs');
-app.set('views', 'views');
+app.set('view engine', 'ejs'); // Set the view engine to EJS
+app.set('views', path.join(__dirname, 'views'));
 
 // Paths
 
