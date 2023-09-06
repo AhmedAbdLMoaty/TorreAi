@@ -5,14 +5,14 @@ const filePath = 'searchHistory.json';
 exports.getLanding  = (req , res , next) => {
 
 res.render('landing', { 
-    pageTitle: 'Hello there'
+    pageTitle: 'Welcome | Torre'
 })
 
 };
 
 exports.getSearch = ( req , res , next ) => {
 res.render('search', {
-pageTitle: 'hello there'
+pageTitle: 'Search | Torre '
 })
 };
 
@@ -24,7 +24,7 @@ exports.getSearchHistory = (req, res) => {
                 console.error(err);
             } else {
                 const searchHistory = JSON.parse(data) || [];
-                res.render('search-history.ejs', { searchHistory, pageTitle: 'Hello there' });
+                res.render('search-history.ejs', { searchHistory, pageTitle: 'Search History | Torre' });
             }
         });
     } else {
@@ -36,7 +36,7 @@ exports.getSearchHistory = (req, res) => {
                 console.log('Created /tmp/searchHistory.json');
             }
         });
-        res.render('search-history.ejs', { searchHistory: initialData, pageTitle: 'Hello there' });
+        res.render('search-history.ejs', { searchHistory: initialData, pageTitle: 'Search History | Torre' });
     }
 };
 
@@ -55,7 +55,7 @@ exports.getSearchHistory = (req, res) => {
                     res.status(500).send('Error reading favorites data');
                 } else {
                     const favorites = JSON.parse(data) || [];
-                    res.render('fav.ejs', { favorites, pageTitle: 'My Favorites' });
+                    res.render('fav.ejs', { favorites, pageTitle: 'Favorites' });
                 }
             });
         } else {
@@ -66,7 +66,7 @@ exports.getSearchHistory = (req, res) => {
                     res.status(500).send('Error creating favorites data');
                 } else {
                     console.log(`Created ${filePath}`);
-                    res.render('fav.ejs', { favorites: initialData, pageTitle: 'My Favorites' });
+                    res.render('fav.ejs', { favorites: initialData, pageTitle: 'Favorites' });
                 }
             });
         }
