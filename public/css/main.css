@@ -247,19 +247,18 @@ h1 {
 .intro {
     opacity: 1; 
   }
-    /* Add CSS styles for the favorites container */
+   
     #favoritesList {
-      display: flex;
-      flex-wrap: wrap; /* Allow cards to wrap to the next row when needed */
-      justify-content: space-between; /* Distribute cards evenly in the row */
-      color: #070101;
-  }
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: space-between; 
+    }
 
-  /* Add CSS styles for each card */
-  .result-card {
-      width: 30%; /* Adjust the width based on your design */
-      margin-bottom: 20px; /* Add some spacing between cards */
-  }
+    /* Add CSS styles for each card */
+    .result-card {
+        width: 20%; 
+        margin-bottom: 20px;
+    }
 
 
 
