@@ -161,3 +161,56 @@ function displayFavorites() {
 
 displayFavorites();
 
+
+document.addEventListener('DOMContentLoaded', function () {
+    const favorites = JSON.parse(localStorage.getItem("favorites"));
+
+    // Check if favorites exist and are not empty
+    if (favorites && favorites.length > 0) {
+        const favoritesList = document.getElementById('favoritesList');
+
+        // Clear any existing items in the list
+        favoritesList.innerHTML = '';
+
+        // Add each favorite to the list with the card template
+        favorites.forEach((favorite) => {
+            const resultCard = document.createElement('div');
+            resultCard.classList.add('result-card');
+
+            // Create an image element
+            const imageUrlElement = document.createElement('img');
+            imageUrlElement.src = favorite.imageUrl; // Assuming the image URL is in the 'imageUrl' property
+            imageUrlElement.alt = `Image for ${favorite.name}`;
+            imageUrlElement.classList.add('card-image');
+
+            // Create a container for text content
+            const textContent = document.createElement('div');
+            textContent.classList.add('card-text-content');
+
+            // Add name
+            const nameElement = document.createElement('h2');
+            nameElement.textContent = `${favorite.name}`;
+            textContent.appendChild(nameElement);
+
+            // Add professional headline
+            const headlineElement = document.createElement('p');
+            headlineElement.textContent = ` ${favorite.professionalHeadline}`;
+            textContent.appendChild(headlineElement);
+
+            // Add a "View Profile" link
+            const viewProfileButton = document.createElement('a');
+            viewProfileButton.textContent = 'View Profile';
+            viewProfileButton.href = `https://torre.ai/${favorite.username}`;
+            viewProfileButton.target = '_blank';
+            viewProfileButton.classList.add('view-profile-button');
+            textContent.appendChild(viewProfileButton);
+
+            // Append the image and text content to the result card
+            resultCard.appendChild(imageUrlElement);
+            resultCard.appendChild(textContent);
+
+            // Append the result card to the favorites list
+            favoritesList.appendChild(resultCard);
+        });
+    }
+});

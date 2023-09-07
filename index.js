@@ -23,6 +23,7 @@ app.set('view engine', 'ejs'); // Set the view engine to EJS
 app.use(express.static(path.join(__dirname, 'public')));
 app.set("views", path.join(__dirname, "views"));
 
+app.use(express.static('public'));
 
 // Paths
 
